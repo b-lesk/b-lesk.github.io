@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benjamin Lesko — Software Developer</title>
+  <meta name="description" content="Full-stack software developer. Building production-grade applications with Python, FastAPI, and AI integration." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="dark bg-gray-950 text-gray-100 min-h-screen font-sans antialiased">
+
+  <!-- Nav -->
+  <nav class="border-b border-gray-800 px-6 py-4">
+    <div class="max-w-3xl mx-auto flex items-center justify-between">
+      <span class="font-semibold text-white">Benjamin Lesko</span>
+      <div class="flex items-center gap-6 text-sm text-gray-400">
+        <a href="https://github.com/b-lesk" target="_blank" rel="noopener" class="hover:text-white transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener" class="hover:text-white transition-colors">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 py-20">
+
+    <!-- Hero -->
+    <section class="mb-20">
+      <p class="text-emerald-400 text-sm font-medium mb-3 tracking-wide uppercase">Software Developer</p>
+      <h1 class="text-4xl font-bold text-white mb-5 leading-tight">
+        Building full-stack applications<br class="hidden sm:block" /> that ship to production.
+      </h1>
+      <p class="text-gray-400 text-lg leading-relaxed max-w-xl">
+        I build end-to-end systems — from database schema to deployed UI. Currently focused on Python backends, async APIs, and AI integration.
+      </p>
+    </section>
+
+    <!-- Featured Project -->
+    <section class="mb-20">
+      <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-6">Featured Project</h2>
+
+      <div class="border border-gray-800 rounded-xl p-6 bg-gray-900 hover:border-gray-700 transition-colors">
+        <div class="flex items-start justify-between gap-4 mb-4">
+          <div>
+            <h3 class="text-white font-semibold text-lg">PaperTrade</h3>
+            <p class="text-gray-400 text-sm mt-1">AI-powered algorithmic trading platform</p>
+          </div>
+          <a href="https://papertrade.dev" target="_blank" rel="noopener"
+             class="shrink-0 bg-emerald-500 hover:bg-emerald-400 text-black text-sm font-semibold px-4 py-2 rounded-lg transition-colors">
+            Live Demo
+          </a>
+        </div>
+
+        <p class="text-gray-300 text-sm leading-relaxed mb-5">
+          Full-stack paper trading platform where users create algorithmic strategies in plain English and the app converts them to executable logic via Claude AI. Connects to Alpaca Markets API for real-time data and simulated trade execution.
+        </p>
+
+        <div class="mb-5">
+          <h4 class="text-gray-500 text-xs font-medium uppercase tracking-wide mb-3">What I built</h4>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">→</span> Multi-user auth system with JWT, bcrypt, and per-user encrypted API key storage</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">→</span> AI strategy parser that converts natural language into trading parameters using Claude API</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">→</span> Multi-factor signal engine combining RSI, MACD, Bollinger Bands, and market regime detection</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">→</span> Real-time dashboard with Chart.js, Alpine.js reactivity, and HTMX dynamic updates</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">→</span> CI/CD pipeline: GitHub Actions → Docker → Fly.io, with Alembic migrations on deploy</li>
+          </ul>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">Python 3.13</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">FastAPI</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">SQLAlchemy</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">SQLite</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">Alembic</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">Claude AI</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">Alpaca API</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">Docker</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">Fly.io</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">TailwindCSS</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">Alpine.js</span>
+          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">HTMX</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="mb-20">
+      <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-6">Skills</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div>
+          <h3 class="text-white text-sm font-medium mb-3">Backend</h3>
+          <ul class="space-y-1.5 text-gray-400 text-sm">
+            <li>Python 3.13</li>
+            <li>FastAPI / Uvicorn</li>
+            <li>SQLAlchemy (async)</li>
+            <li>Alembic migrations</li>
+            <li>REST APIs</li>
+            <li>JWT / OAuth</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white text-sm font-medium mb-3">Frontend</h3>
+          <ul class="space-y-1.5 text-gray-400 text-sm">
+            <li>Jinja2 / HTML5</li>
+            <li>TailwindCSS</li>
+            <li>Alpine.js</li>
+            <li>HTMX</li>
+            <li>Chart.js</li>
+            <li>Responsive design</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white text-sm font-medium mb-3">DevOps & Tools</h3>
+          <ul class="space-y-1.5 text-gray-400 text-sm">
+            <li>Docker</li>
+            <li>GitHub Actions (CI/CD)</li>
+            <li>Fly.io</li>
+            <li>Git</li>
+            <li>Linux / Bash</li>
+            <li>AI APIs (Claude)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section>
+      <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-4">Get in touch</h2>
+      <p class="text-gray-400 text-sm mb-5">Open to new opportunities. Reach out on LinkedIn or browse my work on GitHub.</p>
+      <div class="flex gap-4">
+        <a href="https://github.com/b-lesk" target="_blank" rel="noopener"
+           class="border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white text-sm px-5 py-2.5 rounded-lg transition-colors">
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener"
+           class="border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white text-sm px-5 py-2.5 rounded-lg transition-colors">
+          LinkedIn
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-gray-800 px-6 py-6 mt-20">
+    <div class="max-w-3xl mx-auto text-center text-gray-600 text-sm">
+      Benjamin Lesko &mdash; Software Developer
+    </div>
+  </footer>
+
+</body>
+</html>
