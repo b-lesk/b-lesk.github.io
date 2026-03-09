@@ -9,97 +9,234 @@
   <script>
     tailwind.config = {
       darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
-        }
-      }
+      theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } }
     }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { background-color: #07070f; }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 900px;
+      height: 700px;
+      background: radial-gradient(ellipse at center,
+        rgba(99, 102, 241, 0.14) 0%,
+        rgba(139, 92, 246, 0.07) 40%,
+        transparent 70%);
+      pointer-events: none;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #fff 0%, #a5b4fc 45%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-primary { transition: opacity 0.2s, transform 0.2s; }
+
+    .card {
+      background: rgba(255,255,255,0.018);
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      border-color: rgba(99,102,241,0.3);
+      box-shadow: 0 0 40px rgba(99,102,241,0.08);
+    }
+
+    .tag {
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.2);
+      color: #a5b4fc;
+    }
+
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 14px;
+      background: #6366f1;
+      border-radius: 2px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .feature-row {
+      border-left: 1px solid rgba(99,102,241,0.2);
+      padding-left: 16px;
+    }
+
+    nav { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+  </style>
 </head>
-<body class="dark bg-gray-950 text-gray-100 min-h-screen font-sans antialiased">
+<body class="dark text-gray-100 min-h-screen font-sans antialiased grid-bg">
 
   <!-- Nav -->
-  <nav class="border-b border-gray-800 px-6 py-4">
-    <div class="max-w-3xl mx-auto flex items-center justify-between">
-      <span class="font-semibold text-white">Benjamin Lesko</span>
-      <div class="flex items-center gap-6 text-sm text-gray-400">
-        <a href="https://github.com/b-lesk" target="_blank" rel="noopener" class="hover:text-white transition-colors">GitHub</a>
-        <a href="https://www.linkedin.com/in/benjamin-lesko/" target="_blank" rel="noopener" class="hover:text-white transition-colors">LinkedIn</a>
+  <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 border-b border-white/[0.05] bg-[#07070f]/75">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <span class="font-black text-white tracking-tight text-lg">BL<span class="text-indigo-400">.</span></span>
+      <div class="flex items-center gap-8 text-sm">
+        <a href="#work" class="text-gray-400 hover:text-white transition-colors">Work</a>
+        <a href="#skills" class="text-gray-400 hover:text-white transition-colors">Skills</a>
+        <a href="https://github.com/b-lesk" target="_blank" rel="noopener"
+           class="text-gray-400 hover:text-white transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/benjamin-lesko/" target="_blank" rel="noopener"
+           class="btn-primary text-white font-semibold px-4 py-2 rounded-lg text-sm">
+          LinkedIn
+        </a>
       </div>
     </div>
   </nav>
 
-  <main class="max-w-3xl mx-auto px-6 py-20">
+  <!-- Hero -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="hero-glow"></div>
 
-    <!-- Hero -->
-    <section class="mb-20">
-      <p class="text-emerald-400 text-sm font-medium mb-3 tracking-wide uppercase">Software Developer</p>
-      <h1 class="text-4xl font-bold text-white mb-5 leading-tight">
-        Building full-stack applications<br class="hidden sm:block" /> that ship to production.
+    <!-- Floating accent dots -->
+    <div class="absolute top-[28%] right-[22%] w-1.5 h-1.5 rounded-full bg-indigo-400/50"></div>
+    <div class="absolute top-[38%] left-[18%] w-1 h-1 rounded-full bg-violet-400/40"></div>
+    <div class="absolute bottom-[30%] right-[35%] w-1 h-1 rounded-full bg-indigo-300/40"></div>
+    <div class="absolute top-[55%] left-[30%] w-1.5 h-1.5 rounded-full bg-violet-500/30"></div>
+
+    <div class="relative text-center px-6 max-w-4xl mx-auto pt-24">
+      <!-- Status badge -->
+      <div class="inline-flex items-center gap-2.5 bg-indigo-500/10 border border-indigo-500/20 rounded-full px-4 py-2 mb-10">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-indigo-300 text-sm font-medium">Open to new opportunities</span>
+      </div>
+
+      <h1 class="text-[56px] sm:text-[80px] font-black leading-[1.02] tracking-tight mb-6">
+        <span class="text-white">Full-stack apps.</span><br/>
+        <span class="gradient-text">Built to ship.</span>
       </h1>
-      <p class="text-gray-400 text-lg leading-relaxed max-w-xl">
-        I build end-to-end systems — from database schema to deployed UI. Currently focused on Python backends, async APIs, and AI integration.
+
+      <p class="text-gray-400 text-lg sm:text-xl leading-relaxed max-w-xl mx-auto mb-12">
+        I'm Benjamin Lesko. I build end-to-end systems &mdash; from database schema to deployed UI.
+        Python backends, async APIs, AI integration.
       </p>
-    </section>
+
+      <div class="flex items-center justify-center gap-4">
+        <a href="#work" class="btn-primary text-white font-semibold px-7 py-3.5 rounded-xl">
+          View my work
+        </a>
+        <a href="https://github.com/b-lesk" target="_blank" rel="noopener"
+           class="border border-white/10 hover:border-white/20 text-gray-300 hover:text-white font-medium px-7 py-3.5 rounded-xl transition-colors">
+          GitHub
+        </a>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="mt-20 flex justify-center">
+        <div class="flex flex-col items-center gap-1.5 opacity-30">
+          <div class="w-px h-8 bg-gray-400"></div>
+          <span class="text-xs text-gray-400 tracking-widest uppercase">Scroll</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-5xl mx-auto px-6 pb-32">
 
     <!-- Featured Project -->
-    <section class="mb-20">
-      <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-6">Featured Project</h2>
+    <section id="work" class="mb-28">
+      <p class="section-label text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-10">Featured Project</p>
 
-      <div class="border border-gray-800 rounded-xl p-6 bg-gray-900 hover:border-gray-700 transition-colors">
-        <div class="flex items-start justify-between gap-4 mb-4">
+      <div class="card rounded-2xl p-8 sm:p-10">
+        <!-- Project header -->
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-5 mb-7">
           <div>
-            <h3 class="text-white font-semibold text-lg">PaperTrade</h3>
-            <p class="text-gray-400 text-sm mt-1">AI-powered algorithmic trading platform</p>
+            <div class="flex items-center gap-3 mb-2">
+              <h3 class="text-white font-black text-3xl">PaperTrade</h3>
+              <span class="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full">
+                Live
+              </span>
+            </div>
+            <p class="text-gray-400">AI-powered algorithmic trading platform</p>
           </div>
           <a href="https://papertrade.dev" target="_blank" rel="noopener"
-             class="shrink-0 bg-emerald-500 hover:bg-emerald-400 text-black text-sm font-semibold px-4 py-2 rounded-lg transition-colors">
-            Live Demo
+             class="shrink-0 self-start btn-primary text-white text-sm font-bold px-5 py-3 rounded-xl">
+            Live Demo &rarr;
           </a>
         </div>
 
-        <p class="text-gray-300 text-sm leading-relaxed mb-5">
-          Full-stack paper trading platform where users create algorithmic strategies in plain English and the app converts them to executable logic via Claude AI. Connects to Alpaca Markets API for real-time data and simulated trade execution.
+        <p class="text-gray-300 text-[15px] leading-relaxed mb-8 max-w-2xl">
+          Full-stack paper trading platform where users create algorithmic strategies in plain English
+          and the app converts them to executable logic via Claude AI. Connects to Alpaca Markets API
+          for real-time data and simulated trade execution.
         </p>
 
-        <div class="mb-5">
-          <h4 class="text-gray-500 text-xs font-medium uppercase tracking-wide mb-3">What I built</h4>
-          <ul class="space-y-2 text-sm text-gray-300">
-            <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">→</span> Multi-user auth system with JWT, bcrypt, and per-user encrypted API key storage</li>
-            <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">→</span> AI strategy parser that converts natural language into trading parameters using Claude API</li>
-            <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">→</span> Multi-factor signal engine combining RSI, MACD, Bollinger Bands, and market regime detection</li>
-            <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">→</span> Real-time dashboard with Chart.js, Alpine.js reactivity, and HTMX dynamic updates</li>
-            <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">→</span> CI/CD pipeline: GitHub Actions → Docker → Fly.io, with Alembic migrations on deploy</li>
-          </ul>
+        <!-- Feature grid -->
+        <div class="grid sm:grid-cols-2 gap-4 mb-8">
+          <div class="feature-row">
+            <p class="text-white text-sm font-semibold mb-0.5">Multi-user auth system</p>
+            <p class="text-gray-500 text-sm">JWT, bcrypt, per-user encrypted API key storage</p>
+          </div>
+          <div class="feature-row">
+            <p class="text-white text-sm font-semibold mb-0.5">AI strategy parser</p>
+            <p class="text-gray-500 text-sm">Natural language &rarr; trading parameters via Claude API</p>
+          </div>
+          <div class="feature-row">
+            <p class="text-white text-sm font-semibold mb-0.5">Multi-factor signal engine</p>
+            <p class="text-gray-500 text-sm">RSI, MACD, Bollinger Bands, market regime detection</p>
+          </div>
+          <div class="feature-row">
+            <p class="text-white text-sm font-semibold mb-0.5">Real-time dashboard</p>
+            <p class="text-gray-500 text-sm">Chart.js, Alpine.js reactivity, HTMX dynamic updates</p>
+          </div>
+          <div class="feature-row sm:col-span-2">
+            <p class="text-white text-sm font-semibold mb-0.5">CI/CD pipeline</p>
+            <p class="text-gray-500 text-sm">GitHub Actions &rarr; Docker &rarr; Fly.io with Alembic migrations on deploy</p>
+          </div>
         </div>
 
+        <!-- Tech tags -->
         <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">Python 3.13</span>
-          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">FastAPI</span>
-          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">SQLAlchemy</span>
-          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">SQLite</span>
-          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">Alembic</span>
-          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">Claude AI</span>
-          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">Alpaca API</span>
-          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">Docker</span>
-          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">Fly.io</span>
-          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">TailwindCSS</span>
-          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">Alpine.js</span>
-          <span class="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">HTMX</span>
+          <span class="tag text-xs px-3 py-1 rounded-full font-medium">Python 3.13</span>
+          <span class="tag text-xs px-3 py-1 rounded-full font-medium">FastAPI</span>
+          <span class="tag text-xs px-3 py-1 rounded-full font-medium">SQLAlchemy</span>
+          <span class="tag text-xs px-3 py-1 rounded-full font-medium">SQLite</span>
+          <span class="tag text-xs px-3 py-1 rounded-full font-medium">Alembic</span>
+          <span class="tag text-xs px-3 py-1 rounded-full font-medium">Claude AI</span>
+          <span class="tag text-xs px-3 py-1 rounded-full font-medium">Alpaca API</span>
+          <span class="tag text-xs px-3 py-1 rounded-full font-medium">Docker</span>
+          <span class="tag text-xs px-3 py-1 rounded-full font-medium">Fly.io</span>
+          <span class="tag text-xs px-3 py-1 rounded-full font-medium">TailwindCSS</span>
+          <span class="tag text-xs px-3 py-1 rounded-full font-medium">Alpine.js</span>
+          <span class="tag text-xs px-3 py-1 rounded-full font-medium">HTMX</span>
         </div>
       </div>
     </section>
 
     <!-- Skills -->
-    <section class="mb-20">
-      <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-6">Skills</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div>
-          <h3 class="text-white text-sm font-medium mb-3">Backend</h3>
-          <ul class="space-y-1.5 text-gray-400 text-sm">
+    <section id="skills" class="mb-28">
+      <p class="section-label text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-10">Skills</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="card rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mb-5">
+            <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <h3 class="text-white font-bold mb-4">Backend</h3>
+          <ul class="space-y-2 text-gray-400 text-sm">
             <li>Python 3.13</li>
             <li>FastAPI / Uvicorn</li>
             <li>SQLAlchemy (async)</li>
@@ -108,9 +245,15 @@
             <li>JWT / OAuth</li>
           </ul>
         </div>
-        <div>
-          <h3 class="text-white text-sm font-medium mb-3">Frontend</h3>
-          <ul class="space-y-1.5 text-gray-400 text-sm">
+        <div class="card rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mb-5">
+            <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 5h16M4 10h16M4 15h10"/>
+            </svg>
+          </div>
+          <h3 class="text-white font-bold mb-4">Frontend</h3>
+          <ul class="space-y-2 text-gray-400 text-sm">
             <li>Jinja2 / HTML5</li>
             <li>TailwindCSS</li>
             <li>Alpine.js</li>
@@ -119,9 +262,15 @@
             <li>Responsive design</li>
           </ul>
         </div>
-        <div>
-          <h3 class="text-white text-sm font-medium mb-3">DevOps & Tools</h3>
-          <ul class="space-y-1.5 text-gray-400 text-sm">
+        <div class="card rounded-2xl p-6">
+          <div class="w-9 h-9 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mb-5">
+            <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+            </svg>
+          </div>
+          <h3 class="text-white font-bold mb-4">DevOps & Tools</h3>
+          <ul class="space-y-2 text-gray-400 text-sm">
             <li>Docker</li>
             <li>GitHub Actions (CI/CD)</li>
             <li>Fly.io</li>
@@ -133,26 +282,34 @@
       </div>
     </section>
 
-    <!-- Contact -->
-    <section>
-      <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-4">Get in touch</h2>
-      <p class="text-gray-400 text-sm mb-5">Open to new opportunities. Reach out on LinkedIn or browse my work on GitHub.</p>
-      <div class="flex gap-4">
-        <a href="https://github.com/b-lesk" target="_blank" rel="noopener"
-           class="border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white text-sm px-5 py-2.5 rounded-lg transition-colors">
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/benjamin-lesko/" target="_blank" rel="noopener"
-           class="border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white text-sm px-5 py-2.5 rounded-lg transition-colors">
-          LinkedIn
-        </a>
+    <!-- Contact CTA -->
+    <section class="relative overflow-hidden card rounded-2xl p-12 text-center">
+      <!-- Glow behind -->
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div style="width:700px;height:400px;background:radial-gradient(ellipse at center,rgba(99,102,241,0.09) 0%,transparent 65%)"></div>
+      </div>
+      <div class="relative">
+        <h2 class="text-3xl font-black text-white mb-3">Let's build something.</h2>
+        <p class="text-gray-400 mb-8 max-w-sm mx-auto">
+          Open to new opportunities. Reach out on LinkedIn or browse my work on GitHub.
+        </p>
+        <div class="flex items-center justify-center gap-4">
+          <a href="https://www.linkedin.com/in/benjamin-lesko/" target="_blank" rel="noopener"
+             class="btn-primary text-white font-semibold px-7 py-3.5 rounded-xl">
+            LinkedIn
+          </a>
+          <a href="https://github.com/b-lesk" target="_blank" rel="noopener"
+             class="border border-white/10 hover:border-white/20 text-gray-300 hover:text-white font-medium px-7 py-3.5 rounded-xl transition-colors">
+            GitHub
+          </a>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-gray-800 px-6 py-6 mt-20">
-    <div class="max-w-3xl mx-auto text-center text-gray-600 text-sm">
+  <footer class="border-t border-white/[0.05] px-6 py-6">
+    <div class="max-w-5xl mx-auto text-center text-gray-600 text-sm">
       Benjamin Lesko &mdash; Software Developer
     </div>
   </footer>
