@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Benjamin Lesko, Data Engineer</title>
-  <meta name="description" content="Benjamin Lesko, data engineer in New Orleans. SQL and Python pipelines, data models and quality checks. Builder of SipTrack." />
+  <meta name="description" content="Benjamin Lesko, data and AI engineer in New Orleans. SQL and Python pipelines, LLM workflows, RAG and quality checks. Builder of SipTrack." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
@@ -266,7 +266,7 @@
     #skills { padding: 88px 0 96px; }
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       border: 1px solid var(--border);
     }
     .skill-col { padding: 32px; }
@@ -414,7 +414,7 @@ h2.section-title, h3.skill-label { font-weight: 500; }
     </h1>
 
     <p class="hero-sub">
-      I build SQL and Python pipelines, data models and the checks that keep them correct.
+      I build SQL and Python pipelines, LLM workflows and the checks that keep them correct.
       I work at Accenture as a Senior Analyst, Data Engineer, supporting Meta as a client.
       I live in New Orleans.
     </p>
@@ -471,14 +471,15 @@ h2.section-title, h3.skill-label { font-weight: 500; }
           <ul class="exp-bullets">
             <li>Co-developed shared daily-summary data models for AI reliability reporting. I validated that they matched the existing results. The team measured about 50 times less data scanned and query time dropping from about two minutes to about 20 seconds.</li>
             <li>Wrote annotation pipeline transformations: deduplication, picking the final outcome per task, JSON extraction and checks for empty and duplicate rows. They show missing grades, rejected tasks and factuality coverage. I led SQL reviews and walkthroughs with 20+ collaborators.</li>
-            <li>Built automation for approved backfills. It handled submission, monitoring, retry limits and row-arrival checks, so a request could not close with zero rows. That system has since been retired.</li>
+            <li>Built an AI agent workflow for approved backfills, with chat, Claude Code skill and web entry points. It handled submission, monitoring, retry limits and row-arrival checks, so a request could not close with zero rows. That system has since been retired.</li>
             <li>Diagnosed workload skew caused by null join keys and fixed dependency-completion logic. Reliability reporting recovered and the data-quality alerts stayed in place.</li>
             <li>Standardized dependency-ordered cleanup scripts, approval checks and post-run verification for privacy cleanup across several pipelines. The cleanup is ongoing.</li>
-            <li>Co-developed privacy-scoping procedures and human-reviewed guidance for recurring data-asset reviews.</li>
+            <li>Co-developed privacy-scoping procedures and human-reviewed AI guidance for recurring data-asset reviews. Prototyped a dry-run recommendation workflow where a reviewer approves each change. It was not deployed.</li>
             <li>Wrote interval-based pipeline migrations and a shared interface that replaced duplicated conditional logic.</li>
             <li>Delivered first-turn measurement for an on-device assistant: input flags, dimensions, staging and grouping logic.</li>
             <li>Onboard and support three teammates on reliability, latency and quality work.</li>
-            <li>Co-built a full-stack Next.js platform for an internal practitioner community of 250+.</li>
+            <li>Co-built a full-stack Next.js AI platform for an internal practitioner community of 250+, with onboarding, discovery, review and an assistant.</li>
+            <li>Designed a retrieval (RAG) solution on Azure, OpenAI and Cosmos DB over 60+ statements of work, with a semantic layer for contract value by period.</li>
           </ul>
           <div class="tags">
             <span class="exp-tag">SQL</span>
@@ -487,6 +488,8 @@ h2.section-title, h3.skill-label { font-weight: 500; }
             <span class="exp-tag">Hive</span>
             <span class="exp-tag">Data modeling</span>
             <span class="exp-tag">Data quality</span>
+            <span class="exp-tag">AI agents</span>
+            <span class="exp-tag">RAG</span>
           </div>
         </div>
       </div>
@@ -555,7 +558,7 @@ h2.section-title, h3.skill-label { font-weight: 500; }
           </div>
           <div class="feature-row">
             <span class="feature-key">Venue data</span>
-            <span class="feature-val">Gemini turns each bar's own page into structured deals. A rule-based validator drops any deal whose price, item or times it cannot find on that page.</span>
+            <span class="feature-val">An LLM pipeline. Gemini, or a local open model through Ollama, turns each bar's own page into schema-constrained JSON deals. A rule-based validator drops any deal whose price, item or times it cannot find on that page.</span>
           </div>
           <div class="feature-row">
             <span class="feature-key">Monitoring</span>
@@ -644,7 +647,17 @@ h2.section-title, h3.skill-label { font-weight: 500; }
           <li>Supabase</li>
           <li>Cloudflare</li>
           <li>GitHub Actions and Git</li>
-          <li>LLM APIs: Gemini, OpenAI, Claude</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h3 class="skill-label">AI and LLMs</h3>
+        <ul class="skill-list">
+          <li>RAG and vector databases</li>
+          <li>AI agents and Claude Code</li>
+          <li>OpenAI, Gemini, Claude</li>
+          <li>Azure and Cosmos DB</li>
+          <li>Local models with Ollama</li>
+          <li>Schema-constrained extraction</li>
         </ul>
       </div>
     </div>
