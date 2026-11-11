@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Benjamin Lesko — Data Engineer</title>
-  <meta name="description" content="Data & Analytics Engineer. Transforming complex data into reliable insights at Meta scale. Currently at Accenture, pursuing M.S. Analytics at Georgia Tech." />
+  <title>Benjamin Lesko, Data Engineer</title>
+  <meta name="description" content="Benjamin Lesko, data engineer in New Orleans. SQL and Python pipelines, data models and quality checks. Builder of SipTrack." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
@@ -339,7 +339,7 @@
     @media (max-width: 860px) {
       .wrap { padding: 0 24px; }
       .nav-inner { padding: 16px 24px; }
-      .nav-links a:not(.nav-cta) { display: none; }
+      
       .hero h1 { font-size: clamp(44px, 10vw, 72px); }
       .hero-stats { gap: 32px; }
       .exp-item { grid-template-columns: 1fr; gap: 12px; }
@@ -355,55 +355,164 @@
     @media (max-width: 560px) {
       .feature-row { grid-template-columns: 1fr; gap: 4px; }
     }
-  </style>
+  
+/* Added: a11y, project list, mobile nav */
+.skip { position: absolute; left: -999px; top: 8px; background: var(--fg); color: var(--bg); padding: 8px 14px; z-index: 200; }
+.skip:focus { left: 8px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+h2.section-title, h3.skill-label { font-weight: 500; }
+.tags { margin-top: 16px; }
+.card-link { display: block; font-size: 13px; color: var(--accent); margin-bottom: 10px; }
+.card-link:last-of-type { margin-bottom: 18px; }
+.card-link:hover, .more-link:hover, a.code-val:hover { text-decoration: underline; }
+.more-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
+.more-item { border: 1px solid var(--border); border-radius: 4px; padding: 22px; }
+.more-title { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+.more-desc { font-size: 14px; color: var(--dim); line-height: 1.65; margin-bottom: 12px; }
+.more-link { font-size: 13px; color: var(--accent); }
+.older { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; color: var(--muted); border: 1px solid var(--border); background: var(--card); padding: 2px 7px; border-radius: 2px; margin-left: 6px; vertical-align: middle; white-space: nowrap; }
+.cert { font-size: 13px; color: var(--dim); margin-top: 16px; }
+.contact-headline { display: block; }
+.code-line { flex-wrap: wrap; }
+@media (max-width: 860px) {
+  .nav-inner { flex-wrap: wrap; gap: 10px; }
+  .nav-links { gap: 16px; font-size: 13px; flex-wrap: wrap; }
+  .more-projects { grid-template-columns: 1fr; }
+  .hero { min-height: auto; }
+  .hero-stats { flex-wrap: wrap; gap: 24px 32px; margin-top: 48px; }
+}
+@media (max-width: 560px) {
+  nav { position: static; }
+  .nav-cta { padding: 6px 12px; }
+}
+</style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-inner">
-      <span class="nav-logo mono">benjamin<span class="dot">.</span>lesko</span>
-      <div class="nav-links">
-        <a href="#experience">experience</a>
-        <a href="#work">work</a>
-        <a href="#skills">skills</a>
-        <a href="https://github.com/b-lesk" target="_blank" rel="noopener">github</a>
-        <a href="https://www.linkedin.com/in/benjamin-lesko/" target="_blank" rel="noopener" class="nav-cta">linkedin</a>
+<a href="#main" class="skip">Skip to content</a>
+
+<nav aria-label="Main">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo mono">benjamin<span class="dot">.</span>lesko</a>
+    <div class="nav-links">
+      <a href="#experience">experience</a>
+      <a href="#work">projects</a>
+      <a href="#skills">skills</a>
+      <a href="https://github.com/b-lesk" target="_blank" rel="noopener">github</a>
+      <a href="https://www.linkedin.com/in/benjamin-lesko/" target="_blank" rel="noopener" class="nav-cta">linkedin</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="wrap hero-content">
+
+    <h1>
+      Benjamin Lesko<br/>
+      <span class="accent">Data engineer.</span>
+    </h1>
+
+    <p class="hero-sub">
+      I build SQL and Python pipelines, data models and the checks that keep them correct.
+      I work at Accenture as a Senior Analyst, Data Engineer, supporting Meta as a client.
+      I live in New Orleans.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#experience" class="btn-primary">View experience</a>
+      <a href="#work" class="btn-ghost">See SipTrack</a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">Now</div>
+        <div class="stat-label">Accenture, client Meta</div>
+      </div>
+      <div>
+        <div class="stat-num">Before</div>
+        <div class="stat-label">North, data science</div>
+      </div>
+      <div>
+        <div class="stat-num">Building</div>
+        <div class="stat-label">SipTrack, live</div>
       </div>
     </div>
-  </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="wrap hero-content">
+  </div>
+</section>
 
-      <h1>
-        Complex data.<br/>
-        <span class="accent">Clear decisions.</span>
-      </h1>
+<hr class="divider" />
 
-      <p class="hero-sub">
-        I'm Benjamin Lesko &mdash; Data &amp; Analytics Engineer.
-        I build data systems that are trustworthy, maintainable, and aligned with business needs.
-        Currently at Accenture, supporting AI and data infrastructure in the technology sector.
-      </p>
+<main class="wrap" id="main">
 
-      <div class="hero-actions">
-        <a href="#experience" class="btn-primary">View experience</a>
-        <a href="https://www.linkedin.com/in/benjamin-lesko/" target="_blank" rel="noopener" class="btn-ghost">LinkedIn</a>
+  <!-- Experience -->
+  <section id="experience">
+    <div class="section-meta">
+      <span class="section-num">01 &mdash;</span>
+      <h2 class="section-title">Experience</h2>
+    </div>
+
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">May 2025 &ndash; Present</div>
+          <div class="exp-company">Accenture, client Meta</div>
+        </div>
+        <div>
+          <h3 class="exp-title">Senior Analyst, Data Engineer</h3>
+          <div class="exp-location">Remote. AI wearables data</div>
+          <p class="exp-desc">
+            I am an Accenture employee on a team that supports data engineering for Meta's AI wearables products.
+            The team works on reliability reporting, annotation data and privacy workflows.
+            The points below are my own part of that work.
+          </p>
+          <ul class="exp-bullets">
+            <li>Co-developed shared daily-summary data models for AI reliability reporting. I validated that they matched the existing results. The team measured about 50 times less data scanned and query time dropping from about two minutes to about 20 seconds.</li>
+            <li>Wrote annotation pipeline transformations: deduplication, picking the final outcome per task, JSON extraction and checks for empty and duplicate rows. They show missing grades, rejected tasks and factuality coverage. I led SQL reviews and walkthroughs with 20+ collaborators.</li>
+            <li>Built automation for approved backfills. It handled submission, monitoring, retry limits and row-arrival checks, so a request could not close with zero rows. That system has since been retired.</li>
+            <li>Diagnosed workload skew caused by null join keys and fixed dependency-completion logic. Reliability reporting recovered and the data-quality alerts stayed in place.</li>
+            <li>Standardized dependency-ordered cleanup scripts, approval checks and post-run verification for privacy cleanup across several pipelines. The cleanup is ongoing.</li>
+            <li>Co-developed privacy-scoping procedures and human-reviewed guidance for recurring data-asset reviews.</li>
+            <li>Wrote interval-based pipeline migrations and a shared interface that replaced duplicated conditional logic.</li>
+            <li>Delivered first-turn measurement for an on-device assistant: input flags, dimensions, staging and grouping logic.</li>
+            <li>Onboard and support three teammates on reliability, latency and quality work.</li>
+            <li>Co-built a full-stack Next.js platform for an internal practitioner community of 250+.</li>
+          </ul>
+          <div class="tags">
+            <span class="exp-tag">SQL</span>
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">Presto</span>
+            <span class="exp-tag">Hive</span>
+            <span class="exp-tag">Data modeling</span>
+            <span class="exp-tag">Data quality</span>
+          </div>
+        </div>
       </div>
 
-      <div class="hero-stats">
-        <div>
-          <div class="stat-num accent">$100K+</div>
-          <div class="stat-label">operational value created</div>
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">May 2022 &ndash; Mar 2025</div>
+          <div class="exp-company">North</div>
         </div>
         <div>
-          <div class="stat-num">60+</div>
-          <div class="stat-label">dashboards deployed</div>
-        </div>
-        <div>
-          <div class="stat-num">2,000+</div>
-          <div class="stat-label">hours of cost savings</div>
+          <h3 class="exp-title">Data Scientist, Intern to Associate</h3>
+          <div class="exp-location">Payments and financial services</div>
+          <ul class="exp-bullets">
+            <li>Optimized Snowflake ETL with daily Airflow pulls and cut compute cost by 25%. Automated SLA reporting that took 1 to 2 hours a day by hand.</li>
+            <li>Automated parts of credit review and underwriting in Python and SQL. The estimate was about 2,000 hours of manual work removed per year.</li>
+            <li>Built 20+ Sigma and Power BI dashboards for 60+ stakeholders.</li>
+            <li>Used A/B testing and statistical modeling on transaction datasets over 100 GB for fraud, risk and compliance work.</li>
+          </ul>
+          <div class="tags">
+            <span class="exp-tag">Snowflake</span>
+            <span class="exp-tag">Airflow</span>
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">SQL</span>
+            <span class="exp-tag">Sigma</span>
+            <span class="exp-tag">Power BI</span>
+          </div>
         </div>
       </div>
 
@@ -412,258 +521,188 @@
 
   <hr class="divider" />
 
-  <main class="wrap">
-
-    <!-- Experience -->
-    <section id="experience">
-      <div class="section-meta">
-        <span class="section-num">01 &mdash;</span>
-        <span class="section-title">Experience</span>
-      </div>
-
-      <div class="exp-list">
-
-        <div class="exp-item">
-          <div class="exp-meta">
-            <div class="exp-period">May 2025 &mdash; Present</div>
-            <div class="exp-company">Accenture &middot; Full-time</div>
-          </div>
-          <div>
-            <div class="exp-title">Data Eng, Mgmt &amp; Governance Sr Analyst</div>
-            <div class="exp-location">Remote &middot; Technology</div>
-            <ul class="exp-bullets">
-              <li>Built AI automation bots handling data engineering backfills and pipeline processes, serving 50+ downstream users and generating $100K+ in operational value.</li>
-              <li>Supporting AI and LLM products at scale across the full data lifecycle &mdash; ingestion, governance, storage, metrics, and observability.</li>
-              <li>Building data systems that are trustworthy, maintainable, and aligned with business and product decision-making.</li>
-            </ul>
-            <div style="margin-top:16px">
-            <span class="exp-tag">Data Governance</span>
-            <span class="exp-tag">LLM Systems</span>
-            <span class="exp-tag">AI Automation</span>
-            <span class="exp-tag">Data Management</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-meta">
-            <div class="exp-period">Mar 2023 &mdash; Feb 2025</div>
-            <div class="exp-company">North American Bancard &middot; Full-time</div>
-          </div>
-          <div>
-            <div class="exp-title">Data Scientist, Associate</div>
-            <div class="exp-location">Troy, MI &middot; Hybrid</div>
-            <ul class="exp-bullets">
-              <li>Designed and deployed 20+ production Sigma dashboards for 60+ users, transforming manual reporting operations and recovering the equivalent of 2 FTEs in operational capacity.</li>
-              <li>Automated SLA reporting, converting 1&ndash;2 hours of daily manual effort into real-time leadership visibility and operational cost savings.</li>
-              <li>Built a risk flagging system to detect suspicious activity, enabling analysts to focus on fewer than 20 material investigations from 100+ daily searches.</li>
-            </ul>
-            <div style="margin-top: 16px;">
-              <span class="exp-tag">Python</span>
-              <span class="exp-tag">SQL</span>
-              <span class="exp-tag">Sigma</span>
-              <span class="exp-tag">BI Dashboards</span>
-              <span class="exp-tag">Risk Analytics</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <hr class="divider" />
-
-    <!-- Work -->
-    <section id="work">
-      <div class="section-meta">
-        <span class="section-num">02 &mdash;</span>
-        <span class="section-title">Projects</span>
-      </div>
-
-      <div class="project-grid">
-
-        <div>
-          <div class="project-title-row">
-            <h3 class="project-title">PaperTrade</h3>
-            <span class="badge-live">LIVE</span>
-          </div>
-          <p class="project-desc">
-            Full-stack paper trading platform. Users write strategies in plain English &mdash;
-            the app converts them to executable logic via Claude AI, then runs them live against
-            Alpaca Markets real-time data. Built end-to-end: schema, API, dashboard, and deploy pipeline.
-          </p>
-
-          <div class="feature-table">
-            <div class="feature-row">
-              <span class="feature-key">Auth</span>
-              <span class="feature-val">JWT + bcrypt with per-user encrypted API key storage</span>
-            </div>
-            <div class="feature-row">
-              <span class="feature-key">AI parser</span>
-              <span class="feature-val">Natural language strategy &rarr; trading parameters via Claude API</span>
-            </div>
-            <div class="feature-row">
-              <span class="feature-key">Signals</span>
-              <span class="feature-val">RSI, MACD, Bollinger Bands, market regime detection</span>
-            </div>
-            <div class="feature-row">
-              <span class="feature-key">Dashboard</span>
-              <span class="feature-val">Real-time charts via Chart.js, Alpine.js, HTMX</span>
-            </div>
-            <div class="feature-row">
-              <span class="feature-key">Deploy</span>
-              <span class="feature-val">GitHub Actions &rarr; Docker &rarr; Fly.io, Alembic migrations on deploy</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="card-header">
-            <div class="card-domain">papertrade.dev</div>
-            <div class="card-name">AI Trading Platform</div>
-          </div>
-          <div class="card-body">
-            <a href="https://papertrade.dev" target="_blank" rel="noopener" class="card-cta">
-              Open live demo &rarr;
-            </a>
-            <div class="tag-cloud">
-              <span class="tech-tag">Python 3.13</span>
-              <span class="tech-tag">FastAPI</span>
-              <span class="tech-tag">SQLAlchemy</span>
-              <span class="tech-tag">SQLite</span>
-              <span class="tech-tag">Alembic</span>
-              <span class="tech-tag">Claude AI</span>
-              <span class="tech-tag">Alpaca API</span>
-              <span class="tech-tag">Docker</span>
-              <span class="tech-tag">Fly.io</span>
-              <span class="tech-tag">TailwindCSS</span>
-              <span class="tech-tag">Alpine.js</span>
-              <span class="tech-tag">HTMX</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <hr class="divider" />
-
-    <!-- Skills -->
-    <section id="skills">
-      <div class="section-meta">
-        <span class="section-num">03 &mdash;</span>
-        <span class="section-title">Skills</span>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skill-col">
-          <div class="skill-label">Data Engineering</div>
-          <ul class="skill-list">
-            <li>Data pipelines &amp; ingestion</li>
-            <li>Data governance &amp; quality</li>
-            <li>Metrics &amp; observability</li>
-            <li>Python</li>
-            <li>SQL</li>
-            <li>ETL / ELT</li>
-          </ul>
-        </div>
-        <div class="skill-col">
-          <div class="skill-label">Analytics &amp; BI</div>
-          <ul class="skill-list">
-            <li>Sigma</li>
-            <li>Dashboard design</li>
-            <li>Statistical modeling</li>
-            <li>Risk &amp; fraud analytics</li>
-            <li>EDA</li>
-            <li>R</li>
-          </ul>
-        </div>
-        <div class="skill-col">
-          <div class="skill-label">Tools &amp; Platforms</div>
-          <ul class="skill-list">
-            <li>AI / LLM systems</li>
-            <li>Docker</li>
-            <li>GitHub Actions</li>
-            <li>FastAPI / REST APIs</li>
-            <li>Git</li>
-            <li>Linux / Bash</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="edu-strip">
-        <div class="edu-item">
-          <div class="edu-degree">M.S. Analytics <span class="edu-badge">in progress</span></div>
-          <div class="edu-school">Georgia Institute of Technology</div>
-          <div class="edu-period">Aug 2025 &mdash; Dec 2027</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-degree">B.S. Statistics</div>
-          <div class="edu-school">University of Michigan &middot; Minor in Spanish</div>
-          <div class="edu-period">2020 &mdash; 2022</div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="divider" />
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="section-meta">
-        <span class="section-num">04 &mdash;</span>
-        <span class="section-title">Contact</span>
-      </div>
-
-      <div class="contact-grid">
-        <div>
-          <h2 class="contact-headline">Let's build<br/>something.</h2>
-          <p class="contact-sub">Reach out on LinkedIn or browse my work on GitHub.</p>
-          <div class="contact-actions">
-            <a href="https://www.linkedin.com/in/benjamin-lesko/" target="_blank" rel="noopener" class="btn-primary">LinkedIn</a>
-            <a href="https://github.com/b-lesk" target="_blank" rel="noopener" class="btn-ghost">GitHub</a>
-          </div>
-        </div>
-
-        <div class="code-block">
-          <div class="code-comment">// info</div>
-          <div class="code-lines">
-            <div class="code-line">
-              <span class="code-key">role</span>
-              <span class="code-val">data &amp; analytics engineer</span>
-            </div>
-            <div class="code-line">
-              <span class="code-key">company</span>
-              <span class="code-val">accenture · technology</span>
-            </div>
-            <div class="code-line">
-              <span class="code-key">email</span>
-              <span class="code-val">leskobenjamin15@gmail.com</span>
-            </div>
-            <div class="code-line">
-              <span class="code-key">linkedin</span>
-              <span class="code-val">benjamin-lesko</span>
-            </div>
-            <div class="code-line">
-              <span class="code-key">github</span>
-              <span class="code-val">b-lesk</span>
-            </div>
-            <div class="code-line">
-              <span class="code-key">status</span>
-              <span class="code-val online">available</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <span class="footer-text">benjamin lesko &mdash; data engineer</span>
-      <span class="footer-text">&copy; 2025</span>
+  <!-- Projects -->
+  <section id="work">
+    <div class="section-meta">
+      <span class="section-num">02 &mdash;</span>
+      <h2 class="section-title">Projects</h2>
     </div>
-  </footer>
+
+    <div class="project-grid">
+
+      <div>
+        <div class="project-title-row">
+          <h3 class="project-title">SipTrack</h3>
+          <span class="badge-live">LIVE</span>
+        </div>
+        <p class="project-desc">
+          A happy-hour discovery platform. It shows which bars near you have a deal on now, what it is and how long it lasts.
+          I built and run all of it: the iOS app, the website, the database and the data pipeline that finds the deals.
+        </p>
+
+        <div class="feature-table">
+          <div class="feature-row">
+            <span class="feature-key">iOS app</span>
+            <span class="feature-val">SwiftUI and SwiftData. Map, deal list, venue pages, friends and chat.</span>
+          </div>
+          <div class="feature-row">
+            <span class="feature-key">Website</span>
+            <span class="feature-val">Next.js on Cloudflare, plus Pages Functions for small APIs.</span>
+          </div>
+          <div class="feature-row">
+            <span class="feature-key">Backend</span>
+            <span class="feature-val">Supabase Postgres with row-level security, RPCs, edge functions and numbered SQL migrations.</span>
+          </div>
+          <div class="feature-row">
+            <span class="feature-key">Venue data</span>
+            <span class="feature-val">Gemini turns each bar's own page into structured deals. A rule-based validator drops any deal whose price, item or times it cannot find on that page.</span>
+          </div>
+          <div class="feature-row">
+            <span class="feature-key">Monitoring</span>
+            <span class="feature-val">Sentry in the app. A Cloudflare cron worker checks live pages and APIs and sends Resend email alerts. A scheduled GitHub Actions job runs storage cleanup and a health check.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="card-header">
+          <div class="card-domain">siptrack.app</div>
+          <div class="card-name">Happy-hour discovery</div>
+        </div>
+        <div class="card-body">
+          <a href="https://siptrack.app/" target="_blank" rel="noopener" class="card-cta">Open siptrack.app &rarr;</a>
+          <a href="https://apps.apple.com/app/id6760595319" target="_blank" rel="noopener" class="card-link">iOS app on the App Store &rarr;</a>
+          <a href="https://github.com/b-lesk/siptrack-overview" target="_blank" rel="noopener" class="card-link">Architecture overview on GitHub &rarr;</a>
+          <div class="tag-cloud">
+            <span class="tech-tag">Swift</span>
+            <span class="tech-tag">SwiftUI</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">Cloudflare</span>
+            <span class="tech-tag">Supabase</span>
+            <span class="tech-tag">Postgres</span>
+            <span class="tech-tag">Gemini</span>
+            <span class="tech-tag">Sentry</span>
+            <span class="tech-tag">Resend</span>
+            <span class="tech-tag">GitHub Actions</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="more-projects">
+      <div class="more-item">
+        <h3 class="more-title">PaperTrade</h3>
+        <p class="more-desc">Paper-trading web app. You write a strategy in plain English, Claude turns it into parameters and the app runs it against Alpaca market data. FastAPI, SQLAlchemy, Alembic and Docker. Source is private.</p>
+        <a href="https://papertrade.dev/" target="_blank" rel="noopener" class="more-link">papertrade.dev &rarr;</a>
+      </div>
+      <div class="more-item">
+        <h3 class="more-title">Blackjack Casino Plugin <span class="older">older learning project</span></h3>
+        <p class="more-desc">Python desktop app that detects cards on screen with YOLOv5 and suggests basic-strategy moves.</p>
+        <a href="https://github.com/b-lesk/blackjack-casino-plugin" target="_blank" rel="noopener" class="more-link">GitHub repo &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="section-meta">
+      <span class="section-num">03 &mdash;</span>
+      <h2 class="section-title">Skills</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-col">
+        <h3 class="skill-label">Data</h3>
+        <ul class="skill-list">
+          <li>SQL</li>
+          <li>Python</li>
+          <li>Presto and Hive</li>
+          <li>Snowflake</li>
+          <li>Airflow</li>
+          <li>Postgres</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h3 class="skill-label">Engineering</h3>
+        <ul class="skill-list">
+          <li>Data modeling</li>
+          <li>ETL and ELT pipelines</li>
+          <li>Data quality checks</li>
+          <li>Backfills and SLA monitoring</li>
+          <li>A/B testing</li>
+          <li>Sigma and Power BI</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h3 class="skill-label">Apps and tools</h3>
+        <ul class="skill-list">
+          <li>Next.js</li>
+          <li>Swift and SwiftUI</li>
+          <li>Supabase</li>
+          <li>Cloudflare</li>
+          <li>GitHub Actions and Git</li>
+          <li>LLM APIs: Gemini, OpenAI, Claude</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="edu-strip">
+      <div class="edu-item">
+        <div class="edu-degree">M.S. Analytics <span class="edu-badge">in progress</span></div>
+        <div class="edu-school">Georgia Institute of Technology</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">B.S. Statistics</div>
+        <div class="edu-school">University of Michigan. Minor in Spanish</div>
+        <div class="edu-period">December 2022</div>
+      </div>
+    </div>
+    <p class="cert">Certification: Professional Scrum Master I (PSM I), Scrum.org</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-meta">
+      <span class="section-num">04 &mdash;</span>
+      <h2 class="section-title">Contact</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div>
+        <p class="contact-headline">Get in touch.</p>
+        <p class="contact-sub">Email or LinkedIn is the fastest way to reach me.</p>
+        <div class="contact-actions">
+          <a href="mailto:leskobenjamin15@gmail.com" class="btn-primary">Email me</a>
+          <a href="https://www.linkedin.com/in/benjamin-lesko/" target="_blank" rel="noopener" class="btn-ghost">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <div class="code-comment">// links</div>
+        <div class="code-lines">
+          <div class="code-line"><span class="code-key">email</span><a class="code-val" href="mailto:leskobenjamin15@gmail.com">leskobenjamin15@gmail.com</a></div>
+          <div class="code-line"><span class="code-key">linkedin</span><a class="code-val" href="https://www.linkedin.com/in/benjamin-lesko/" target="_blank" rel="noopener">benjamin-lesko</a></div>
+          <div class="code-line"><span class="code-key">github</span><a class="code-val" href="https://github.com/b-lesk" target="_blank" rel="noopener">b-lesk</a></div>
+          <div class="code-line"><span class="code-key">siptrack</span><a class="code-val" href="https://siptrack.app/" target="_blank" rel="noopener">siptrack.app</a></div>
+          <div class="code-line"><span class="code-key">based in</span><span class="code-val">New Orleans, LA</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-text">benjamin lesko, data engineer</span>
+    <span class="footer-text">&copy; 2026</span>
+  </div>
+</footer>
 
 </body>
 </html>

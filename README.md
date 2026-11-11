@@ -1,6 +1,6 @@
 # b-lesk.github.io
 
-Personal portfolio site for Benjamin Lesko — Data & Analytics Engineer.
+Portfolio site for Benjamin Lesko, data engineer in New Orleans.
 
 Live at [b-lesk.github.io](https://b-lesk.github.io)
 
