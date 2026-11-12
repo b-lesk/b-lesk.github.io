@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Benjamin Lesko, Data Engineer</title>
-  <meta name="description" content="Benjamin Lesko, data engineer in New Orleans. 4+ years building pipelines, AI systems, observability and data-quality tooling. Builder of SipTrack." />
+  <meta name="description" content="Benjamin Lesko, data engineer and technical lead in New Orleans. 4+ years: SQL and Python pipelines, AI agents, Azure RAG and privacy automation. Builder of SipTrack." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
@@ -414,10 +414,10 @@ h2.section-title, h3.skill-label { font-weight: 500; }
     </h1>
 
     <p class="hero-sub">
-      4+ years building data pipelines, AI systems and the checks that keep them correct.
-      As a Senior Analyst, Data Engineer at Accenture, supporting Meta's AI wearables work, I build
-      SQL and Python pipelines, observability and data-quality tooling, privacy (GDPR) workflows and LLM agents.
-      On my own time I built and run SipTrack, a live iPhone app, end to end. Based in New Orleans.
+      Data engineer and technical lead with 4+ years across AI wearables and financial services,
+      currently at Accenture supporting Meta. I build SQL and Python pipelines, AI agents,
+      Azure RAG applications and privacy automation. On my own time I built and run SipTrack,
+      a live iPhone app. Based in New Orleans.
     </p>
 
     <div class="hero-actions">
@@ -470,21 +470,17 @@ h2.section-title, h3.skill-label { font-weight: 500; }
             The points below are my own part of that work.
           </p>
           <ul class="exp-bullets">
-            <li>Co-developed shared daily-summary data models for AI reliability reporting. I validated that they matched the existing results. The team measured about 50 times less data scanned and query time dropping from about two minutes to about 20 seconds.</li>
-            <li>Wrote annotation pipeline transformations: deduplication, picking the final outcome per task, JSON extraction and checks for empty and duplicate rows. They show missing grades, rejected tasks and factuality coverage. I led SQL reviews and walkthroughs with 20+ collaborators.</li>
-            <li>Built an AI agent workflow for approved backfills, with chat, Claude Code skill and web entry points. It handled submission, monitoring, retry limits and row-arrival checks, so a request could not close with zero rows. That system has since been retired.</li>
+            <li>Co-developed daily-summary models for about 400 reliability metrics across 20 dimensions, reconciling conflicting dashboard results and validating matching historical outputs with roughly 50 times fewer input rows.</li>
+            <li>Built annotation pipelines that track grading completeness, rejected tasks and factuality coverage, using SQL transformations, deduplication and JSON extraction. Led metric reviews and walkthroughs with 20+ collaborators.</li>
+            <li>Built an AI agent that recovers missing smart-glasses interactions for human annotation: approved requests, retries, and checks that confirm the data arrived before a request closes.</li>
             <li>Diagnosed workload skew caused by null join keys and fixed dependency-completion logic. Reliability reporting recovered and the data-quality alerts stayed in place.</li>
-            <li>Built a full-stack observability dashboard for AI wearables production metrics: throughput, anomaly detection and entropy analysis across the pipelines that depend on them.</li>
-            <li>Built a schema validation framework for an annotation platform migration. It flagged data-loss risk before production cutover, so the problem was fixed before launch.</li>
-            <li>Standardized dependency-ordered cleanup scripts, approval checks and post-run verification for privacy cleanup across several pipelines. The cleanup is ongoing.</li>
-            <li>Co-developed privacy-scoping procedures and human-reviewed AI guidance for recurring data-asset reviews. Prototyped a dry-run recommendation workflow where a reviewer approves each change. It was not deployed.</li>
-            <li>Led privacy (GDPR) remediation across three regulatory waves: authored five operational standards and built AI-assisted discovery across 50,000+ governed data assets.</li>
-            <li>Led the migration of 60+ production pipelines to an interval-based architecture across three teams and 500+ downstream tables, with a shared interface that replaced duplicated conditional logic.</li>
+            <li>Coordinated a privacy cleanup across 120+ tables and over 100 million interactions, standardizing dependency-ordered scripts, approvals and execution checks with engineering and Privacy/Legal teams. A separate retention cleanup cut annual storage costs by about $60K.</li>
+            <li>Co-developed privacy-scoping procedures and human-reviewed AI guidance, supporting reviews across 5,000+ assets and cutting estimated effort for comparable assignments from five hours to one.</li>
+            <li>Migrated runtime and time-spent pipelines to a shared interval-based design, contributing to about $20K in annual savings.</li>
             <li>Delivered first-turn measurement for an on-device assistant: input flags, dimensions, staging and grouping logic.</li>
-            <li>Onboard and support three teammates on reliability, latency and quality work.</li>
-            <li>Co-built a full-stack Next.js AI platform for an internal practitioner community of 250+, with onboarding, discovery, review and an assistant.</li>
-            <li>Built a program-management platform for a leadership team tracking blockers, deliverables and a contingent team of 20+, with AI-grounded chat, automated task curation, capacity scoring and audit logging.</li>
-            <li>Designed a retrieval (RAG) solution on Azure, OpenAI and Cosmos DB over 60+ statements of work, with a semantic layer for contract value by period.</li>
+            <li>Lead technical onboarding and operational support for three teammates across reliability, latency and quality, including SLA monitoring for war-room data delivery.</li>
+            <li>Designed an Azure RAG contract-analysis tool with OpenAI and Cosmos DB across 60+ statements of work, turning an estimated hundreds of manual review hours into hours of search.</li>
+            <li>Co-built a full-stack Next.js AI platform for a community of 250+ practitioners, supporting project discovery and reuse.</li>
           </ul>
           <div class="tags">
             <span class="exp-tag">SQL</span>
@@ -640,8 +636,6 @@ h2.section-title, h3.skill-label { font-weight: 500; }
           <li>ETL and ELT pipelines</li>
           <li>Data quality checks</li>
           <li>Backfills and SLA monitoring</li>
-          <li>Observability and anomaly detection</li>
-          <li>Data governance: GDPR, lineage, metadata</li>
           <li>A/B testing</li>
           <li>Sigma and Power BI</li>
         </ul>
@@ -661,7 +655,6 @@ h2.section-title, h3.skill-label { font-weight: 500; }
         <ul class="skill-list">
           <li>RAG and vector databases</li>
           <li>AI agents and Claude Code</li>
-          <li>Agentic workflows and MCP</li>
           <li>OpenAI, Gemini, Claude</li>
           <li>Azure and Cosmos DB</li>
           <li>Local models with Ollama</li>
