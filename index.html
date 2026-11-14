@@ -416,13 +416,13 @@ h2.section-title, h3.skill-label { font-weight: 500; }
     <p class="hero-sub">
       Data engineer and technical lead with 4+ years across AI wearables and financial services,
       currently at Accenture supporting Meta. I build SQL and Python pipelines, AI agents,
-      Azure RAG applications and privacy automation. On my own time I built and run SipTrack,
-      a live iPhone app. Based in New Orleans.
+      Azure RAG applications and privacy automation. On my own time I built and launched SipTrack,
+      an early-stage happy-hour discovery app. Based in New Orleans.
     </p>
 
     <div class="hero-actions">
       <a href="#experience" class="btn-primary">View experience</a>
-      <a href="#work" class="btn-ghost">See SipTrack</a>
+      <a href="Benjamin-Lesko-Resume.pdf" class="btn-ghost" download>Download resume (PDF)</a>
     </div>
 
     <div class="hero-stats">
@@ -436,7 +436,7 @@ h2.section-title, h3.skill-label { font-weight: 500; }
       </div>
       <div>
         <div class="stat-num">Building</div>
-        <div class="stat-label">SipTrack, live</div>
+        <div class="stat-label">SipTrack, early-stage</div>
       </div>
     </div>
 
@@ -462,7 +462,7 @@ h2.section-title, h3.skill-label { font-weight: 500; }
           <div class="exp-company">Accenture, client Meta</div>
         </div>
         <div>
-          <h3 class="exp-title">Senior Analyst, Data Engineer</h3>
+          <h3 class="exp-title">Senior Analyst, Data Engineer, Wearables AI</h3>
           <div class="exp-location">Remote. AI wearables data</div>
           <p class="exp-desc">
             I am an Accenture employee on a team that supports data engineering for Meta's AI wearables products.
@@ -470,16 +470,14 @@ h2.section-title, h3.skill-label { font-weight: 500; }
             The points below are my own part of that work.
           </p>
           <ul class="exp-bullets">
-            <li>Co-developed daily-summary models for about 400 reliability metrics across 20 dimensions, reconciling conflicting dashboard results and validating matching historical outputs with roughly 50 times fewer input rows.</li>
-            <li>Built annotation pipelines that track grading completeness, rejected tasks and factuality coverage, using SQL transformations, deduplication and JSON extraction. Led metric reviews and walkthroughs with 20+ collaborators.</li>
-            <li>Built an AI agent that recovers missing smart-glasses interactions for human annotation: approved requests, retries, and checks that confirm the data arrived before a request closes.</li>
-            <li>Diagnosed workload skew caused by null join keys and fixed dependency-completion logic. Reliability reporting recovered and the data-quality alerts stayed in place.</li>
+            <li>Helped migrate Wearables AI reliability reporting to shared daily-summary pipelines, cutting data scanned about 50-fold and query time from about 120 to 20 seconds. I own pipeline operations, SLA monitoring and data quality checks for war-room reporting that supports VP-level market decisions.</li>
+            <li>Built SQL annotation pipelines using deduplication and JSON extraction to track grading completeness, rejected tasks and factuality coverage. Led metric reviews and walkthroughs with 20+ collaborators.</li>
+            <li>Built a Python AI agent that has run 200+ production pipeline backfills using LLM calls, scheduled workflows and data-arrival checks. It cut response time by an estimated 90% and replaced contingent-worker effort, for over $150K in estimated savings.</li>
             <li>Coordinated a privacy cleanup across 120+ tables and over 100 million interactions, standardizing dependency-ordered scripts, approvals and execution checks with engineering and Privacy/Legal teams. A separate retention cleanup cut annual storage costs by about $60K.</li>
             <li>Co-developed privacy-scoping procedures and human-reviewed AI guidance, supporting reviews across 5,000+ assets and cutting estimated effort for comparable assignments from five hours to one.</li>
-            <li>Migrated runtime and time-spent pipelines to a shared interval-based design, contributing to about $20K in annual savings.</li>
-            <li>Delivered first-turn measurement for an on-device assistant: input flags, dimensions, staging and grouping logic.</li>
-            <li>Lead technical onboarding and operational support for three teammates across reliability, latency and quality, including SLA monitoring for war-room data delivery.</li>
-            <li>Designed an Azure RAG contract-analysis tool with OpenAI and Cosmos DB across 60+ statements of work, turning an estimated hundreds of manual review hours into hours of search.</li>
+            <li>Migrated Horizon runtime and time-spent pipelines to a shared interval-based design, contributing to $20K in annual savings.</li>
+            <li>Lead technical onboarding and operational support for three Accenture teammates, partnering with Meta engineering and legal on Wearables AI data delivery.</li>
+            <li>Designed an Azure-based RAG contract-analysis tool using OpenAI and Cosmos DB across 60+ statements of work, with estimated review effort reduced from hundreds of manual-review hours to hours of search.</li>
             <li>Co-built a full-stack Next.js AI platform for a community of 250+ practitioners, supporting project discovery and reuse.</li>
           </ul>
           <div class="tags">
@@ -504,10 +502,9 @@ h2.section-title, h3.skill-label { font-weight: 500; }
           <h3 class="exp-title">Data Scientist, Intern to Associate</h3>
           <div class="exp-location">Payments and financial services</div>
           <ul class="exp-bullets">
-            <li>Optimized Snowflake ETL with daily Airflow pulls and cut compute cost by 25%. Automated SLA reporting that took 1 to 2 hours a day by hand.</li>
-            <li>Automated parts of credit review and underwriting in Python and SQL. The estimate was about 2,000 hours of manual work removed per year.</li>
+            <li>Replaced Snowflake dynamic views with daily Airflow pulls, with a reported 25% reduction in compute costs, and automated SLA reporting that saved an estimated 1 to 2 hours a day.</li>
+            <li>Automated credit review and underwriting in Python and SQL, eliminating an estimated 2,000 hours of manual work a year.</li>
             <li>Built 20+ Sigma and Power BI dashboards for 60+ stakeholders.</li>
-            <li>Used A/B testing and statistical modeling on transaction datasets over 100 GB for fraud, risk and compliance work.</li>
           </ul>
           <div class="tags">
             <span class="exp-tag">Snowflake</span>
@@ -537,11 +534,12 @@ h2.section-title, h3.skill-label { font-weight: 500; }
       <div>
         <div class="project-title-row">
           <h3 class="project-title">SipTrack</h3>
-          <span class="badge-live">LIVE</span>
+          <span class="badge-live">EARLY-STAGE</span>
         </div>
         <p class="project-desc">
-          A happy-hour discovery platform. It shows which bars near you have a deal on now, what it is and how long it lasts.
-          I built and run all of it: the iOS app, the website, the database and the data pipeline that finds the deals.
+          An early-stage happy-hour discovery platform that helps people compare local venues and deals: which bars near
+          you have a deal on now, what it is and how long it lasts. I built and launched all of it: the iOS app, the website,
+          the backend and the data pipeline that finds and validates the deals.
         </p>
 
         <div class="feature-table">
@@ -563,7 +561,7 @@ h2.section-title, h3.skill-label { font-weight: 500; }
           </div>
           <div class="feature-row">
             <span class="feature-key">Monitoring</span>
-            <span class="feature-val">Sentry in the app. A Cloudflare cron worker checks live pages and APIs and sends Resend email alerts. A scheduled GitHub Actions job runs storage cleanup and a health check.</span>
+            <span class="feature-val">Sentry in the app. A nightly GitHub Actions job re-checks deals against each venue's own page and updates the ones that changed.</span>
           </div>
         </div>
       </div>
@@ -586,7 +584,6 @@ h2.section-title, h3.skill-label { font-weight: 500; }
             <span class="tech-tag">Postgres</span>
             <span class="tech-tag">Gemini</span>
             <span class="tech-tag">Sentry</span>
-            <span class="tech-tag">Resend</span>
             <span class="tech-tag">GitHub Actions</span>
           </div>
         </div>
@@ -693,6 +690,7 @@ h2.section-title, h3.skill-label { font-weight: 500; }
         <div class="contact-actions">
           <a href="mailto:leskobenjamin15@gmail.com" class="btn-primary">Email me</a>
           <a href="https://www.linkedin.com/in/benjamin-lesko/" target="_blank" rel="noopener" class="btn-ghost">LinkedIn</a>
+          <a href="Benjamin-Lesko-Resume.pdf" class="btn-ghost" download>Resume (PDF)</a>
         </div>
       </div>
 
@@ -702,6 +700,7 @@ h2.section-title, h3.skill-label { font-weight: 500; }
           <div class="code-line"><span class="code-key">email</span><a class="code-val" href="mailto:leskobenjamin15@gmail.com">leskobenjamin15@gmail.com</a></div>
           <div class="code-line"><span class="code-key">linkedin</span><a class="code-val" href="https://www.linkedin.com/in/benjamin-lesko/" target="_blank" rel="noopener">benjamin-lesko</a></div>
           <div class="code-line"><span class="code-key">github</span><a class="code-val" href="https://github.com/b-lesk" target="_blank" rel="noopener">b-lesk</a></div>
+          <div class="code-line"><span class="code-key">resume</span><a class="code-val" href="Benjamin-Lesko-Resume.pdf" download>Benjamin-Lesko-Resume.pdf</a></div>
           <div class="code-line"><span class="code-key">siptrack</span><a class="code-val" href="https://siptrack.app/" target="_blank" rel="noopener">siptrack.app</a></div>
           <div class="code-line"><span class="code-key">based in</span><span class="code-val">New Orleans, LA</span></div>
         </div>
